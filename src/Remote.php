@@ -6,6 +6,7 @@ use Exception;
 use InvalidArgumentException;
 use phpseclib\Crypt\RSA;
 use phpseclib\Net\SFTP;
+use Illuminate\Support\Arr;
 
 class Remote
 {
@@ -104,7 +105,7 @@ class Remote
      */
     private function config($key)
     {
-        return array_get($this->config, $key);
+        return Arr::get($this->config, $key);
     }
 
     /**
